@@ -8,11 +8,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
-Plugin 'bling/vim-bufferline'
 Plugin 'airblade/vim-gitgutter'
+"Plugin 'altercation/vim-colors-solarized'
 "the following was used to create the bash prompt
 "Plugin 'edkolev/promptline.vim'
 
@@ -21,10 +18,17 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " Vundle end
 
+"Load powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
 " My prefs start
-colorscheme solarized        " Use solarized colors
-set background=dark         " As oposed to light
+set guifont=Source\ Code\ Pro\ for\ Powerline:h18
+"colorscheme solarized        " Use solarized colors
+set background=dark          " As oposed to light
 set encoding=utf-8           " Set vim to unicode
+set t_Co=256                 " Set terminal to 256 colors
 set shortmess=atI            " Don’t show the intro message when starting Vim
 set number                   " Enable line numbers
 syntax on                    " Enable syntax highlighting
@@ -62,18 +66,10 @@ endif
 " My prefs end
 
 " Syntastic plugin settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
 
-" Airline plugin settings
-let g:airline_powerline_fonts = 1       " set font to SourceCodePro https://github.com/powerline/fonts
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#bufferline#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '◀'
