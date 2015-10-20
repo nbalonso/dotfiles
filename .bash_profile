@@ -1,5 +1,20 @@
 
 export LC_CTYPE="en_IE.UTF-8" #irish unicode
+#export LC_ALL="en_IE.UTF-8"   #irish unicode
+#export LANG="en_IE.UTF-8"     #irish unicode
+
+#add admin tools to my path
+#export PATH="/usr/local/sbin:$PATH"
+
+#load binaries from my home
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+#if brew then load first
+if [ -d "/usr/local/sbin" ]; then
+    PATH="/usr/local/sbin:$PATH"
+fi
 
 if [[ ${OSTYPE} == 'darwin'* ]]; then
 
@@ -22,14 +37,14 @@ if [[ ${OSTYPE} == 'darwin'* ]]; then
         source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
     fi
 
-#elif [[ ${OSTYPE} == 'linux-gnu' ]]; then
+elif [[ ${OSTYPE} == 'linux-gnu' ]]; then
     #load powerline if installed
-#    if [ -f `which powerline-daemon` ]; then
-#        powerline-daemon -q
-#        POWERLINE_BASH_CONTINUATION=1
-#        POWERLINE_BASH_SELECT=1
-#        source /usr/share/powerline/bash/powerline.sh
-#    fi
+    if [ -f `which powerline-daemon` ]; then
+        powerline-daemon -q
+        POWERLINE_BASH_CONTINUATION=1
+        POWERLINE_BASH_SELECT=1
+        source ~/.local/lib/python2.6/site-packages/powerline/bindings/bash/powerline.sh
+    fi
 
 fi
 
@@ -47,9 +62,6 @@ shopt -s cdspell
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
-
-#add admin tools to my path
-#export PATH="/usr/local/sbin:$PATH"
 
 # a opens Atom
 function a() {
@@ -81,7 +93,7 @@ function o() {
 # Determine size of a file or total size of a directory
 function fs() {
     if du -b /dev/null > /dev/null 2>&1; then
-        local arg=-sbh
+        local arg=-sh
     else
         local arg=-sh
     fi
