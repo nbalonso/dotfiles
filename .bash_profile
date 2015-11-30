@@ -48,6 +48,9 @@ elif [[ ${OSTYPE} == 'linux-gnu' ]]; then
 
 fi
 
+#shortcuts
+alias rm='rm -i'              #ya' know safety
+alias vi='vim'                #VIM ftw
 alias ll='ls -l'              #ll as RHEL
 alias ..='cd ..'              #shortcut
 alias tailf='tail -f'         #tailf as RHEL
