@@ -63,6 +63,7 @@ set directory=~/.vim/swaps   " Centralize swapfiles
 if exists("&undodir")        " Centralize undo history
     set undodir=~/.vim/undo
 endif
+set paste                    " I like to paste with indentation
 " My prefs end
 
 " Syntastic plugin settings
