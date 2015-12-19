@@ -51,6 +51,7 @@ set ttyfast                  " Optimize for fast terminal connections
 set laststatus=2             " Always show status line
 set showmode                 " Show the current mode
 set title                    " Show the filename in the window titlebar
+set titleold=""              " Don't set term title to 'thanks for flying..' on Vim quit
 set incsearch                " Highlight dynamically as pattern is typed
 set scrolloff=3              " Start scrolling three lines before the horizontal window border
 set showcmd                  " Show the (partial) command as it’s being typed
