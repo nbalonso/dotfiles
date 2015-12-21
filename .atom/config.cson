@@ -1,0 +1,23 @@
+"*":
+  editor:
+    invisibles: {}
+    autoIndentOnPaste: false
+    showIndentGuide: true
+    showInvisibles: true
+    fontSize: 15
+  core:
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+    audioBeep: false
+    destroyEmptyPanes: false
+  linter: {}
+  "exception-reporting":
+    userId: "6f9f8dde-c819-f7c5-8bb2-f6a685c2c937"
+  welcome:
+    showOnStartup: false
+  "linter-puppet-lint":
+    oldVersion: false
+    executablePath: "/usr/bin/puppet-lint"
+  minimap: {}

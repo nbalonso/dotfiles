@@ -1,0 +1,9 @@
+atom-alignment@0.12.1
+language-puppet@0.15.0
+language-spec@0.1.0
+linter@1.11.3
+linter-puppet-lint@0.6.1
+linter-ruby@1.2.0
+minimap@4.18.4
+toggle-quotes@1.0.0
+
