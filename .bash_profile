@@ -6,15 +6,22 @@ export LC_ALL=en_IE.UTF-8     #irish unicode
 #add admin tools to my path
 #export PATH="/usr/local/sbin:$PATH"
 
-#load binaries from my home
+#load binaries from home
 if [ -d "$HOME/.local/bin" ]; then
-    PATH="$HOME/.local/bin:$PATH"
+    PATH=$PATH:$HOME/.local/bin
 fi
 
-#if brew then load first
-if [ -d "/usr/local/sbin" ]; then
-    PATH="/usr/local/sbin:$PATH"
+if [ -d "$HOME/bin" ]; then
+    PATH=$PATH:$HOME/bin
 fi
+
+#if brew; then load first
+if [ -d "/usr/local/sbin" ]; then
+    PATH=$PATH:/usr/local/sbin
+fi
+
+#export it
+export PATH
 
 if [[ ${OSTYPE} == 'darwin'* ]]; then
 
