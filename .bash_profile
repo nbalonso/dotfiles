@@ -56,7 +56,9 @@ elif [[ ${OSTYPE} == 'linux-gnu' ]]; then
 fi
 
 #shortcuts
-alias rm='rm -i'              #ya' know safety
+alias rm='rm -i'              #prompt before overwrite
+alias cp='cp -i'              #prompt before overwrite
+alias mv='mv -i'              #prompt before overwrite
 alias vi='vim'                #VIM ftw
 alias ll='ls -l'              #ll as RHEL
 alias ..='cd ..'              #shortcut
