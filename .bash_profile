@@ -6,6 +6,9 @@ export LC_ALL=en_IE.UTF-8     #irish unicode
 #add admin tools to my path
 #export PATH="/usr/local/sbin:$PATH"
 
+#set vim as my main editor
+export EDITOR=vim
+
 #load binaries from home
 if [ -d "$HOME/.local/bin" ]; then
     PATH=$PATH:$HOME/.local/bin
