@@ -26,6 +26,7 @@ fi
 #export it
 export PATH
 
+#os x
 if [[ ${OSTYPE} == 'darwin'* ]]; then
 
     # Color things with grc
@@ -47,6 +48,7 @@ if [[ ${OSTYPE} == 'darwin'* ]]; then
         source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
     fi
 
+#linux
 elif [[ ${OSTYPE} == 'linux-gnu' ]]; then
     #load powerline if installed
     if [ -f `which powerline-daemon` ]; then
@@ -54,6 +56,16 @@ elif [[ ${OSTYPE} == 'linux-gnu' ]]; then
         POWERLINE_BASH_CONTINUATION=1
         POWERLINE_BASH_SELECT=1
         source ~/.local/lib/python2.6/site-packages/powerline/bindings/bash/powerline.sh
+    fi
+
+#freebsd
+elif [[ ${OSTYPE} =~ freebsd ]]; then
+    #load powerline if installed
+    if [ -f `which powerline-daemon` ]; then
+        powerline-daemon -q
+        POWERLINE_BASH_CONTINUATION=1
+        POWERLINE_BASH_SELECT=1
+        source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
     fi
 
 fi
