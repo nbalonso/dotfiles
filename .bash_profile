@@ -80,6 +80,7 @@ alias ..='cd ..'              #shortcut
 alias tailf='tail -f'         #tailf as RHEL
 alias grep='grep --color'     #always highlight
 alias egrep='egrep --color'   #always highlight
+alias progress='progress -m $!' #the only way I use progress
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
