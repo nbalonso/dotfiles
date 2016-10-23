@@ -48,6 +48,18 @@ if [[ ${OSTYPE} == 'darwin'* ]]; then
         source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
     fi
 
+    alias grep='grep --color'     #always highlight
+    alias egrep='egrep --color'   #always highlight
+
+    # o opens in OS X
+    function o() {
+        if [ $# -eq 0 ]; then
+            open .
+        else
+            open "$@"
+        fi
+    }
+
 #linux
 elif [[ ${OSTYPE} == 'linux-gnu' ]]; then
     #load powerline if installed
@@ -58,8 +70,11 @@ elif [[ ${OSTYPE} == 'linux-gnu' ]]; then
         source ~/.local/lib/python2.6/site-packages/powerline/bindings/bash/powerline.sh
     fi
 
-#freebsd
-elif [[ ${OSTYPE} =~ freebsd ]]; then
+    alias grep='grep --color'     #always highlight
+    alias egrep='egrep --color'   #always highlight
+
+#bsd
+elif [[ ${OSTYPE} =~ bsd ]]; then
     #load powerline if installed
     if [ -f `which powerline-daemon` ]; then
         powerline-daemon -q
@@ -71,15 +86,13 @@ elif [[ ${OSTYPE} =~ freebsd ]]; then
 fi
 
 #shortcuts
-alias rm='rm -i'              #prompt before overwrite
+alias rm='rm -i'              #prompt before deleting
 alias cp='cp -i'              #prompt before overwrite
 alias mv='mv -i'              #prompt before overwrite
 alias vi='vim'                #VIM ftw
 alias ll='ls -l'              #ll as RHEL
 alias ..='cd ..'              #shortcut
 alias tailf='tail -f'         #tailf as RHEL
-alias grep='grep --color'     #always highlight
-alias egrep='egrep --color'   #always highlight
 alias progress='progress -m $!' #the only way I use progress
 
 # Case-insensitive globbing (used in pathname expansion)
@@ -107,15 +120,6 @@ function v() {
         vim .
     else
         vim "$@"
-    fi
-}
-
-# o opens in OS X
-function o() {
-    if [ $# -eq 0 ]; then
-        open .
-    else
-        open "$@"
     fi
 }
 
