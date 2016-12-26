@@ -59,10 +59,10 @@ set ruler                    " Show the cursor position
 set modeline                 " Respect modeline in files
 set modelines=4              " Respect modeline in files
 set backupskip=/tmp/*,/private/tmp/*    " Don’t create backups when editing files in certain directories
-set backupdir=~/.vim/backups " Centralize backups
-set directory=~/.vim/swaps   " Centralize swapfiles
+set backupdir=~/.vim/backups// " Centralize backups
+set directory=~/.vim/swaps//   " Centralize swapfiles
 if exists("&undodir")        " Centralize undo history
-    set undodir=~/.vim/undo
+    set undodir=~/.vim/undo//
 endif
 set paste                    " I like to paste with indentation
 " My prefs end
