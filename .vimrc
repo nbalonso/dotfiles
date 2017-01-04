@@ -56,8 +56,7 @@ set incsearch                " Highlight dynamically as pattern is typed
 set scrolloff=3              " Start scrolling three lines before the horizontal window border
 set showcmd                  " Show the (partial) command as it’s being typed
 set ruler                    " Show the cursor position
-set modeline                 " Respect modeline in files
-set modelines=4              " Respect modeline in files
+set nomodeline               " Disable modelines for safety
 set backupskip=/tmp/*,/private/tmp/*    " Don’t create backups when editing files in certain directories
 set backupdir=~/.vim/backups// " Centralize backups
 set directory=~/.vim/swaps//   " Centralize swapfiles
