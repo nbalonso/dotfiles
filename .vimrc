@@ -9,9 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'altercation/vim-colors-solarized'
-"the following was used to create the bash prompt
-"Plugin 'edkolev/promptline.vim'
+Plugin 'tpope/vim-fugitive'
 
 " All plugins must be added before the following
 call vundle#end()            " required
@@ -24,9 +22,6 @@ python powerline_setup()
 python del powerline_setup
 
 " My prefs start
-set guifont=Source\ Code\ Pro\ for\ Powerline:h18
-"colorscheme solarized        " Use solarized colors
-set background=dark          " As oposed to light
 set encoding=utf-8           " Set vim to unicode
 set t_Co=256                 " Set terminal to 256 colors
 set shortmess=atI            " Don’t show the intro message when starting Vim
@@ -35,7 +30,7 @@ syntax on                    " Enable syntax highlighting
 set wildmenu                 " Enhance command-line completion
 set cursorline               " Highlight current line
 set backspace=indent,eol,start " Allow backspace in insert mode
-set tabstop=2                " Make tabs as wide as two spaces
+set tabstop=4                " Make tabs as wide as two spaces
 set esckeys                  " Allow cursor keys in insert mode
 set encoding=utf-8 nobomb    " Use UTF-8 without BOM
 set binary                   " Don’t add empty newlines at the end of files
