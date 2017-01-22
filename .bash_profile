@@ -1,7 +1,7 @@
 
 #set all locales just in case
-export LANG=en_IE.UTF-8       #irish unicode
-export LC_ALL=en_IE.UTF-8     #irish unicode
+export LANG=en_US.UTF-8       #irish unicode
+export LC_ALL=en_US.UTF-8     #irish unicode
 
 #add admin tools to my path
 #export PATH="/usr/local/sbin:$PATH"
