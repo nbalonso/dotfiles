@@ -22,15 +22,20 @@ python powerline_setup()
 python del powerline_setup
 
 " My prefs start
+syntax enable                " Enable syntax highlighting
+set background=dark          " Darken the back
+colorscheme solarized        " Choose this color scheme
 set encoding=utf-8           " Set vim to unicode
 set t_Co=256                 " Set terminal to 256 colors
 set shortmess=atI            " Don’t show the intro message when starting Vim
 set number                   " Enable line numbers
-syntax on                    " Enable syntax highlighting
+set relativenumber           " Relative line numbers to current line
+set path=.,**                " Activate built-in recursive fuzzy find
 set wildmenu                 " Enhance command-line completion
 set cursorline               " Highlight current line
 set backspace=indent,eol,start " Allow backspace in insert mode
-set tabstop=4                " Make tabs as wide as two spaces
+set tabstop=4                " Make tabs as wide as four spaces
+set expandtab                " Spaces instead of tabs
 set esckeys                  " Allow cursor keys in insert mode
 set encoding=utf-8 nobomb    " Use UTF-8 without BOM
 set binary                   " Don’t add empty newlines at the end of files
